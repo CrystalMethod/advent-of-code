@@ -7,7 +7,7 @@ fn main() {
 fn process(input: &str) -> String {
     let lines: Vec<_> = input.lines().collect();
     let mut result: i32 = 0;
-    for (i, line) in lines.iter().enumerate() {
+    for line in lines.iter() {
         let mut calibration: Vec<char> = Vec::new();
         for c in line.chars() {
             if c.is_numeric() {

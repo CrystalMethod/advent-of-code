@@ -10,7 +10,7 @@ fn process(input: &str) -> String {
     ];
     let lines: Vec<_> = input.lines().collect();
     let mut result: i32 = 0;
-    for (i, line) in lines.iter().enumerate() {
+    for line in lines.iter() {
         let mut calibration: Vec<char> = Vec::new();
         let mut chars: Vec<char> = Vec::new();
         for c in line.chars() {
@@ -52,7 +52,7 @@ fn process(input: &str) -> String {
                 chars.push(c);
                 let mut word: String = chars.iter().rev().collect::<String>();
                 for numword in numwords {
-                    if word.as_str().starts_with(&numword) {
+                    if word.as_str().starts_with(numword) {
                         word = numword.to_string();
                         match word.as_str() {
                             "one" => calibration.push('1'),
